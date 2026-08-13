@@ -496,22 +496,42 @@
         }
 
         @media (max-width: 768px) {
-            .header-main {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .search-box {
-                width: 100%;
-                margin: 0;
-            }
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-        }
+            @media (max-width: 768px) {
+    /* Đưa danh sách sản phẩm & máy móc về 1 cột duy nhất */
+    .grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Đưa phần hình ảnh xưởng về 1 cột */
+    .section-padding div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Đảm bảo máy móc có ô spanned chiếm đúng 1 cột trên ĐT */
+    .product-card[style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+    }
+
+    /* Tối ưu Header & Navigation */
+    .header-main {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .search-box {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
     </style>
 </head>
 <body>
