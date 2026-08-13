@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECA ADVANCED FORGING SOLUTION | Precision Metal Stamping & Tooling Partner</title>
+    <!-- FontAwesome icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --eca-navy: #002D62;      
+            --eca-yellow: #FFD100;    
+            --eca-red: #E30613;       
+            --eca-light-gray: #F4F6F8;
+            --text-dark: #1E293B;     
+            --border-color: #E2E8F0;  
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--eca-light-gray);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .top-bar {
+            background-color: var(--eca-red);
+            color: #ffffff;
+            font-size: 0.85rem;
+            padding: 6px 0;
+            font-weight: 500;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            margin-right: 6px;
+            color: var(--eca-yellow);
+        }
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-box img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--eca-navy);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--eca-red);
+            font-weight: 700;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 520px;
+            margin: 0 30px;
+            display: flex;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 2px solid var(--eca-navy);
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-box button {
+            background-color: var(--eca-navy);
+            color: var(--eca-yellow);
+            border: none;
+            padding: 0 22px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #001f44;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--eca-navy);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .action-item i {
+            font-size: 1.5rem;
+            color: var(--eca-red);
+        }
+
+        nav {
+            background-color: var(--eca-navy);
+            border-top: 3px solid var(--eca-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 12px 18px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            background-color: var(--eca-yellow);
+            color: var(--eca-navy);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 45, 98, 0.92), rgba(0, 20, 45, 0.95)), 
+                        url('images/eca-factory-overview.jpg') center/cover;
+            color: white;
+            padding: 55px 0;
+            border-bottom: 4px solid var(--eca-red);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--eca-yellow);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 18px;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--eca-yellow);
+        }
+
+        .hero-card {
+            background: white;
+            color: var(--text-dark);
+            padding: 22px;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-top: 4px solid var(--eca-red);
+        }
+
+        .hero-card h3 {
+            color: var(--eca-navy);
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--eca-light-gray);
+            padding-bottom: 6px;
+        }
+
+        .contact-mini p {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-mini i {
+            width: 20px;
+            color: var(--eca-red);
+        }
+
+        .section-padding {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #CBD5E1;
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--eca-red);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--eca-navy);
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--eca-navy);
+        }
+
+        .product-img {
+            height: 180px;
+            background-color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--eca-navy);
+            color: var(--eca-yellow);
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--eca-navy);
+            margin-bottom: 8px;
+        }
+
+        .product-spec {
+            font-size: 0.82rem;
+            color: #475569;
+            list-style: none;
+        }
+
+        .product-spec li {
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .product-spec li::before {
+            content: '•';
+            color: var(--eca-red);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .vm-box {
+            background: white;
+            padding: 22px;
+            border-radius: 6px;
+            border-top: 4px solid var(--eca-navy);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .vm-box h3 {
+            color: var(--eca-navy);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .clients-flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .client-item {
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--eca-navy);
+            padding: 10px 20px;
+            background: var(--eca-light-gray);
+            border-radius: 4px;
+            border-left: 3px solid var(--eca-red);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 120px;
+            background: white;
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--eca-navy);
+            color: var(--eca-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 6px auto;
+            font-weight: 900;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            background-color: var(--eca-navy);
+            color: white;
+            padding-top: 35px;
+            border-top: 5px solid var(--eca-yellow);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            padding-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--eca-yellow);
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.82rem;
+            color: #E2E8F0;
+            margin-bottom: 6px;
+        }
+
+        .footer-col i {
+            margin-right: 6px;
+            color: var(--eca-yellow);
+        }
+
+        .footer-bottom {
+            background-color: #001A38;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 0.78rem;
+            color: #94A3B8;
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .search-box {
+                width: 100%;
+                margin: 0;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span><i class="fas fa-map-marker-alt"></i> 3A Duong 970, Long Truong Ward, Ho Chi Minh City, Vietnam</span>
+                <span><i class="fas fa-envelope"></i> tkn_12@ecavn.com</span>
+            </div>
+            <div class="top-info">
+                <span><i class="fas fa-phone-alt"></i> Hotline: +84 785102399 | +84 899941920</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container header-main">
+            <!-- Official ECA Logo -->
+            <a href="#" class="logo-box">
+                <img src="images/eca-logo.png" alt="ECA Logo">
+                <div class="logo-text">
+                    <span class="logo-title">ECA ADVANCED FORGING</span>
+                    <span class="logo-sub">SOLUTION CO., LTD</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="Search press machines, hob cutters, tooling specifications (AIDA, YAMADA, CMM)...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Hotline Box -->
+            <div class="header-actions">
+                <a href="#contact" class="action-item">
+                    <i class="fas fa-phone-volume"></i>
+                    <div>
+                        <div style="font-size: 0.72rem; color: #64748B;">ENGINEERING SUPPORT</div>
+                        <div>+84 899941920</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">Company Overview</a></li>
+                    <li><a href="#services">Core Services</a></li>
+                    <li><a href="#machinery">Machinery & Facilities</a></li>
+                    <li><a href="#quality">Quality Assurance</a></li>
+                    <li><a href="#clients">Valued Customers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>ECA ADVANCED FORGING SOLUTION</h1>
+                <h2>Precision Metal Stamping & Tooling Partner</h2>
+                
+                <div class="badge-list">
+                    <span class="badge"><i class="fas fa-certificate" style="color:var(--eca-yellow);"></i> 35+ Years Engineering Expertise</span>
+                    <span class="badge"><i class="fas fa-microscope" style="color:var(--eca-yellow);"></i> Quality Control Up To 0.005 mm</span>
+                    <span class="badge"><i class="fas fa-cogs" style="color:var(--eca-yellow);"></i> In-House Tool & Die Design</span>
+                </div>
+
+                <p style="font-size: 0.9rem; color: #CBD5E1; max-width: 650px;">
+                    Founded in 2021 and backed by over 35 years of engineering expertise in precision metal stamping, tooling fabrication, manufacturing automation, and industrial engineering.
+                </p>
+            </div>
+
+            <!-- Right Mini Contact Card -->
+            <div class="hero-card">
+                <h3><i class="fas fa-address-card" style="color:var(--eca-red);"></i> Executive Contacts</h3>
+                <div class="contact-mini">
+                    <p><strong>PARAMES (MARK)</strong> - General Director</p>
+                    <p><i class="fas fa-envelope"></i> parames@ecavn.com</p>
+                    <p><i class="fas fa-phone"></i> +84 785102399</p>
+                    <hr style="margin: 8px 0; border: 0; border-top: 1px solid #E2E8F0;">
+                    <p><strong>THANG KIANG NEE (NEE)</strong> - Business & Eng Director</p>
+                    <p><i class="fas fa-envelope"></i> tkn_12@ecavn.com</p>
+                    <p><i class="fas fa-phone"></i> +84 899941920 | Zalo: 0937458248</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factory Real Image Showcase -->
+    <section class="section-padding" style="background: white; padding-bottom: 20px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ECA Facility & Shop Floor Overview</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="border-radius: 6px; overflow: hidden; height: 260px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <img src="images/eca-factory-overview.jpg" alt="ECA Factory Overview" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="border-radius: 6px; overflow: hidden; height: 260px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <img src="images/eca-entrance-signboard.jpg" alt="ECA Entrance Signboard" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview & Values Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Company Overview & Vision</h2>
+            </div>
+
+            <div class="vm-grid">
+                <div class="vm-box">
+                    <h3><i class="fas fa-eye" style="color:var(--eca-navy);"></i> OUR VISION</h3>
+                    <ul class="product-spec">
+                        <li><strong>Innovation-Driven:</strong> To be the globally recognized leader in precision metal stamping, pioneering next-generation manufacturing solutions.</li>
+                        <li><strong>Customer-Centric:</strong> To be the most trusted and preferred partner for custom metal stamping, celebrated for exceptional quality, responsiveness, and capability.</li>
+                        <li><strong>Operational Excellence:</strong> To continuously set the industry standard for efficiency, sustainability, and precision in every stamped component.</li>
+                    </ul>
+                </div>
+                <div class="vm-box">
+                    <h3><i class="fas fa-bullseye" style="color:var(--eca-red);"></i> OUR MISSION</h3>
+                    <ul class="product-spec">
+                        <li><strong>Empowerment & Quality:</strong> Deliver high-value, defect-free stamped components through continuous innovation and advanced technical controls.</li>
+                        <li><strong>Value & Engineering:</strong> Provide manufacturing solutions and engineering expertise from prototyping to mass production with world-class quality.</li>
+                        <li><strong>Growth & Sustainability:</strong> Produce essential components that build a better connected world while fostering a safe, rewarding environment.</li>
+                    </ul>
+                </div>
+                <div class="vm-box">
+                    <h3><i class="fas fa-award" style="color:var(--eca-yellow); filter: drop-shadow(0 0 1px #000);"></i> CORE VALUES</h3>
+                    <ul class="product-spec">
+                        <li><strong>Quality & Precision:</strong> Zero-defect manufacturing with microscopic tolerances.</li>
+                        <li><strong>Continuous Improvement:</strong> Regularly upgrading machinery, sensor technology, and production processes.</li>
+                        <li><strong>Integrity & Safety:</strong> Building trust with transparency while maintaining a safe shop floor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="services" class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Services & Capabilities</h2>
+            </div>
+
+            <div class="grid-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/tool-die-design-fabrication.png" alt="Tool & Die Design Fabrication">
+                        <span class="product-tag">IN-HOUSE</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Tool & Die Design & Fabrication</div>
+                        <ul class="product-spec">
+                            <li>Tool Size: Up to 2000 x 750 mm</li>
+                            <li>Part Size: 10 x 10 mm to 450 x 1000 mm</li>
+                            <li>Material Thickness: 0.15 mm to 4.0 mm</li>
+                            <li>Tooling Types: Progressive & Compound tools</li>
+                            <li>Engineering Focus: Design for Cost, Quality & Manufacturability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/metal-stamping-production.png" alt="Metal Stamping Production">
+                        <span class="product-tag">STAMPING</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Precision Metal Stamping</div>
+                        <ul class="product-spec">
+                            <li>Progressive & Manual Stamping</li>
+                            <li>E&I Laminations, Stator stack lamination</li>
+                            <li>Precision Connector Pins</li>
+                            <li>In-House Tooling Maintenance & Modification</li>
+                            <li>Engineering Support from Prototype to Mass Production</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/hob-cutter-supply.jpg" alt="Hob Cutter Supply">
+                        <span class="product-tag">CUTTER SUPPLY</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">DTR Hob Cutter Supply</div>
+                        <ul class="product-spec">
+                            <li>DTR Standard Hob Cutter</li>
+                            <li>DTR Involute Spline Hob Cutter</li>
+                            <li>DTR Parallel Side Spline Hob Cutter</li>
+                            <li>DTR Heavy Cutting Hob</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/quality-assurance-measurement-system.jpg" alt="Quality Assurance Measurement System">
+                        <span class="product-tag">QUALITY CONTROL</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Quality Assurance System</div>
+                        <ul class="product-spec">
+                            <li>Video Measuring Machine (VMM 4030) / CMM</li>
+                            <li>Go / No-Go Pins (3 mm to 18 mm)</li>
+                            <li>Werka Digital Caliper 600 mm</li>
+                            <li>Werka Height Gauge 300 mm</li>
+                            <li>Trained Incoming, In-process & Outgoing QA Teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Machinery & Equipment Section -->
+    <section id="machinery" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Equipment & Machinery Facilities</h2>
+            </div>
+
+            <div class="grid-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/yamada-dobby-press-machine.jpg" alt="YAMADA DOBBY Press Machine">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">YAMADA DOBBY HIGH SPEED</div>
+                        <p style="font-size: 0.82rem; color: #475569;">High Speed Press Machine<br><strong>V030CS - 30 TONS - SPM 1200</strong></p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/aida-45-stamping-press.jpg" alt="AIDA 45 Stamping Press">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">AIDA 45 PRESS</div>
+                        <p style="font-size: 0.82rem; color: #475569;">Stamping Press Machine<br><strong>45 TONS - SPM 70</strong></p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/automa-double-crank-press-machine.jpg" alt="AUTOMA DOUBLE CRANK Press Machine">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">AUTOMA DOUBLE CRANK</div>
+                        <p style="font-size: 0.82rem; color: #475569;">Heavy Duty Stamping Press<br><strong>160 TONS - SPM 75</strong></p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/shimashu-press-machine.jpg" alt="SHIMASHU Press Machine">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">SHIMASHU PRESS</div>
+                        <p style="font-size: 0.82rem; color: #475569;">Stamping Press Machine<br><strong>40 TONS - SPM 70</strong></p>
+                    </div>
+                </div>
+                <div class="product-card" style="grid-column: span 2;">
+                    <div class="product-img" style="height: 200px;">
+                        <img src="images/metal-decoiler-straightener-servo-feeder.png" alt="Metal Decoiler, Straightener & Servo Feeder" style="object-fit: contain; background: white;">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">COIL PROCESSING LINE</div>
+                        <p style="font-size: 0.82rem; color: #475569;">Metal Decoiler, Straightener and Automatic Servo Feeder (Width up to 500mm)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Process Section -->
+    <section class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Production Process & Workflow</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-item"><div class="step-number">1</div><strong style="font-size:0.8rem;">Design</strong></div>
+                <div class="step-item"><div class="step-number">2</div><strong style="font-size:0.8rem;">Fabrication</strong></div>
+                <div class="step-item"><div class="step-number">3</div><strong style="font-size:0.8rem;">Stamping</strong></div>
+                <div class="step-item"><div class="step-number">4</div><strong style="font-size:0.8rem;">Tapping/Riveting</strong></div>
+                <div class="step-item"><div class="step-number">5</div><strong style="font-size:0.8rem;">Assembly</strong></div>
+                <div class="step-item"><div class="step-number">6</div><strong style="font-size:0.8rem;">Ultrasonic Degreasing</strong></div>
+                <div class="step-item"><div class="step-number">7</div><strong style="font-size:0.8rem;">Packing & Delivery</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customers & Industries Served -->
+    <section id="clients" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industries Served & Valued Customers</h2>
+            </div>
+
+            <p style="margin-bottom: 15px; font-size: 0.9rem;"><strong>Key Industries:</strong> Semiconductor, Automotive, Consumer Electronics, Home Appliances.</p>
+
+            <div class="clients-flex">
+                <div class="client-item">SCHNEIDER ELECTRIC</div>
+                <div class="client-item">SAMSUNG</div>
+                <div class="client-item">WAHL</div>
+                <div class="client-item">SMC STEEL</div>
+                <div class="client-item">ALLIED</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>ECA FORGING SOLUTION</h4>
+                <p><strong>ECA ADVANCED FORGING SOLUTION CO., LTD</strong></p>
+                <p>Your trusted engineering partner in precision metal stamping, tooling fabrication, and advanced industrial manufacturing.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>LOCATION & CONTACT</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 3A Duong 970, Long Truong Ward, Ho Chi Minh City, Vietnam</p>
+                <p><i class="fas fa-envelope"></i> parames@ecavn.com</p>
+                <p><i class="fas fa-envelope"></i> tkn_12@ecavn.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>EXECUTIVE BOARD</h4>
+                <p><strong>PARAMES (MARK)</strong> - General Director<br>Phone: +84 785102399</p>
+                <p><strong>THANG KIANG NEE (NEE)</strong> - Business & Engineering Director<br>Phone: +84 899941920 (Zalo: 0937458248)</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 ECA ADVANCED FORGING SOLUTION CO., LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
