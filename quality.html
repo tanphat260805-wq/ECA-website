@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Policy & Control - ECA ADVANCED FORGING SOLUTION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0b1f3a;
+            --primary-red: #d32f2f;
+            --primary-yellow: #f59e0b;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-gray: #f1f5f9;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: #08162b;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info i {
+            color: var(--primary-yellow);
+        }
+
+        .lang-switch a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .lang-switch a:hover, .lang-switch a.active {
+            color: var(--primary-yellow);
+        }
+
+        /* --- NAVBAR CHÍNH --- */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        .logo-area {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            padding: 8px 14px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text .main {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text .sub {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: 1.5px;
+            display: block;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-links li {
+            height: 85px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #1e293b;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--primary-red);
+        }
+
+        .nav-links li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -32px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 85px;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            min-width: 200px;
+            list-style: none;
+            border-top: 3px solid var(--primary-red);
+            padding: 8px 0;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            height: auto;
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            padding: 12px 20px;
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--bg-light);
+            color: var(--primary-red);
+        }
+
+        .btn-red {
+            background: var(--primary-red);
+            color: #ffffff !important;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-red:hover {
+            background: #b71c1c;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* --- QUALITY POLICY STATEMENT --- */
+        .policy-hero-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c4d75 100%);
+            color: #ffffff;
+            padding: 70px 0;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .policy-hero-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .policy-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(211, 47, 47, 0.25);
+            color: #ffcdd2;
+            border: 1px solid rgba(211, 47, 47, 0.5);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .policy-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .policy-paragraph {
+            font-size: clamp(1rem, 1.6vw, 1.15rem);
+            line-height: 1.85;
+            color: #f1f5f9;
+            background: rgba(11, 31, 58, 0.45);
+            padding: 35px 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-red);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            text-align: justify;
+        }
+
+        /* --- SECTION HEADER --- */
+        .section-title-wrapper {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 14px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        /* --- WORKFLOW --- */
+        .workflow-container {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .process-card {
+            position: relative;
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 45px 25px 35px;
+            text-align: center;
+            flex: 1;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+        }
+
+        .step-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 2px solid #ffffff;
+        }
+
+        .process-card i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 18px;
+        }
+
+        .process-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .process-card p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.55;
+        }
+
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+            font-size: 2.2rem;
+            flex-shrink: 0;
+            padding: 0 8px;
+        }
+
+        /* --- EQUIPMENT 3-COLUMN GRID --- */
+        .equip-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .equip-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .equip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-red);
+        }
+
+        .equip-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .equip-content {
+            padding: 22px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .equip-content h3 {
+            font-size: 1.05rem;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .equip-content p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* --- SUMMARY CALLOUT SECTION --- */
+        .summary-callout-section {
+            background: linear-gradient(135deg, #0b1f3a 0%, #1e293b 100%);
+            color: #ffffff;
+        }
+
+        .summary-callout-card {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-icon {
+            font-size: 2.4rem;
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+        }
+
+        .summary-title {
+            font-size: clamp(1.5rem, 3vw, 2.1rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .summary-text {
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            line-height: 1.85;
+            color: #e2e8f0;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 30px 35px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-red);
+            margin: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-blue);
+            color: #cbd5e1;
+            padding: 40px 0 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        /* --- RESPONSIVE MOBILE & TABLET --- */
+        @media (max-width: 992px) {
+            .equip-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .workflow-container {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                padding: 10px 0;
+            }
+            .process-card {
+                width: 100%;
+            }
+            .policy-paragraph, .summary-text {
+                text-align: left;
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links li {
+                height: auto;
+                width: 100%;
+            }
+            .nav-links li a.active::after {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .hide-mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .equip-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-location-dot"></i> Long Truong Ward, HCMC, VN</span>
+                <span><i class="fa-solid fa-envelope"></i> tkn_12@ecavn.com</span>
+            </div>
+            <div class="lang-switch">
+                <a href="#" class="active">EN</a> | <a href="#">VN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR CHÍNH -->
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-area">
+                <div class="logo-box">ECA</div>
+                <div class="logo-text">
+                    <span class="main">ECA ADVANCED</span>
+                    <span class="sub">FORGING SOLUTION</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li class="dropdown">
+                    <a href="capabilities.html">CAPABILITIES <i class="fa-solid fa-chevron-down" style="font-size: 0.75em; margin-left: 4px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="capabilities.html">Our Services</a></li>
+                        <li><a href="capabilities.html#machinery">Machinery List</a></li>
+                    </ul>
+                </li>
+                <li><a href="quality.html" class="active">QUALITY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-red hide-mobile">GET A QUOTE</a>
+            <i class="fa-solid fa-bars mobile-toggle" onclick="document.getElementById('navMenu').classList.toggle('show')"></i>
+        </div>
+    </nav>
+
+    <!-- 1. QUALITY POLICY STATEMENT -->
+    <section class="policy-hero-section">
+        <div class="container">
+            <div class="policy-hero-card">
+                <div class="policy-tag"><i class="fa-solid fa-shield-halved"></i> Corporate Standard</div>
+                <h1 class="policy-title">Quality Policy & Control Measures</h1>
+                <p class="policy-paragraph">
+                    At ECA ADVANCED FORGING SOLUTION, our Quality Policy centers on meeting or exceeding all product specifications and performance expectations, driving rigorous process controls to achieve Zero Defects before parts leave the floor, maintaining strict on-time delivery schedules for every shipment, and continuously upgrading our methods, technical training, and tooling technology. To uphold these standards, our Key Quality Control Measures ensure routine tooling maintenance and die repairs to prevent dimensional drift, deployment of high-accuracy optical measuring systems, digital gauges, and hardness testers, alongside systematic execution of Statistical Process Control (SPC) and Production Part Approval Processes (PPAP).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. QA/QC WORKFLOW -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">Quality Assurance Workflow</h2>
+            </div>
+            
+            <div class="workflow-container">
+                <div class="process-card">
+                    <div class="step-badge">01</div>
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <h3>IQC (Incoming Quality Control)</h3>
+                    <p>Verification of raw coil strip dimensions, chemical composition, hardness, and surface integrity.</p>
+                </div>
+
+                <div class="flow-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-badge">02</div>
+                    <i class="fa-solid fa-gears"></i>
+                    <h3>IPQC (In-Process Control)</h3>
+                    <p>Real-time optical dimension monitoring, burr height verification, and first-piece/last-piece approvals.</p>
+                </div>
+
+                <div class="flow-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-badge">03</div>
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <h3>OQC (Outgoing Quality Control)</h3>
+                    <p>Full-lot sampling, final dimensional reports, clean degreasing check, and export-grade protective packaging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. METROLOGY & INSPECTION EQUIPMENT -->
+    <section class="section-padding" style="background-color: var(--bg-gray);">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">Inspection & Measurement Equipment</h2>
+                <p class="section-subtitle">High-precision metrology tools verifying critical dimensions and tight tolerances</p>
+            </div>
+
+            <div class="equip-grid">
+                <!-- 1. VMM 4030 -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Video Measuring Machine">
+                    <div class="equip-content">
+                        <h3>VMM 4030 Video Measuring System</h3>
+                        <p>High-resolution optical magnification for complex part profiles, stamping edge quality, and micro-hole dimensions.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Werka Digital Caliper 600mm -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="Werka Digital Caliper 600mm">
+                    <div class="equip-content">
+                        <h3>Werka Digital Caliper (600mm)</h3>
+                        <p>Heavy-duty large range digital caliper for stamping strip width, frame structure, and long-dimension verification.</p>
+                    </div>
+                </div>
+
+                <!-- 3. INSIZE 1193-300 Caliper -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581092267606-2580a97b233a?auto=format&fit=crop&w=600&q=80" alt="INSIZE Digital Caliper">
+                    <div class="equip-content">
+                        <h3>INSIZE 1193-300 Digital Caliper</h3>
+                        <p>Range 0-300mm / 0.03mm accuracy for precision fast checking of part lengths, hole distances, and step heights.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Werka Height Gauge 300mm -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="Werka Height Gauge 300mm">
+                    <div class="equip-content">
+                        <h3>Werka Height Gauge (300mm)</h3>
+                        <p>Precision dual-column height gauge mounted on granite base for precise stepped part thickness and offset verification.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Mitutoyo Digital Micrometer -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Mitutoyo Digital Micrometer">
+                    <div class="equip-content">
+                        <h3>Mitutoyo 293-240-30 Outside Micrometer</h3>
+                        <p>High-precision digital micrometer (0 - 25mm / 0.001mm resolution, IP65) for ultra-critical thickness and diameter checks.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Go / No-Go Pin Sets -->
+                <div class="equip-card">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80" alt="Go / No-Go Pin Sets">
+                    <div class="equip-content">
+                        <h3>Go / No-Go Pin Gauge Sets (3mm - 18mm)</h3>
+                        <p>Standardized cylindrical plug gauges ensuring zero-defect pass-through on precision holes, slots, and locators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. KHỐI TỔNG KẾT & CAM KẾT CHẤT LƯỢNG (ĐÃ BỎ NÚT) -->
+    <section class="section-padding summary-callout-section">
+        <div class="container">
+            <div class="summary-callout-card">
+                <div class="summary-icon"><i class="fa-solid fa-award"></i></div>
+                <h2 class="summary-title">Precision Backed By Metrology</h2>
+                <p class="summary-text">
+                    At <strong>ECA ADVANCED FORGING SOLUTION CO., LTD.</strong>, precision is built on the synergy of rigorous process controls and advanced metrology. Guided by our philosophy of <em>"Quality Without Compromise"</em>, we integrate high-precision measuring instruments—including <strong>VMM 4030 optical systems</strong>, <strong>Mitutoyo digital micrometers</strong>, <strong>INSIZE & Werka calipers and height gauges</strong>, and calibrated pin sets—directly into our 3-stage <strong>IQC – IPQC – OQC</strong> workflow. This end-to-end verification enables us to consistently eliminate manufacturing defects, safeguard tool integrity, and guarantee exact compliance with customer specifications down to <strong>±0.005 mm</strong> tolerances across the Semiconductor, Automotive, Consumer Electronics, and Home Appliance sectors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ECA ADVANCED FORGING SOLUTION CO., LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
